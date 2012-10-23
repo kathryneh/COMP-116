@@ -1,0 +1,9 @@
+A=np.random.random_integers(0,100,10)
+def count_ints(A):
+	'''return a histogram with the number of times each int occurs in A'''
+	#I need to loop around and iterate over each value in A
+	for i in A:
+	#I want to visit each value in A, and visit it, and count it appropriately
+		print i
+
+	

@@ -1,0 +1,130 @@
+import numpy as np
+def append_np(N):
+	a=np.array([]}
+	for i in xrange(N)
+		a=np.append(a, i)
+	return len(a)	
+	
+	b=np.append(b, 2)
+	#this just adds more to the array, building it value by value. 
+def append_list(N):
+	a=[]
+	for i in xrange(N):
+		a.append(i)
+	a=np.array(a)
+	return len(a)
+	
+	#can also do L.append('foo')
+	#file function gives us access to files in 
+	#pdb_file=file('7HVP.pdb','r'_
+	#foo=file('7HVP.pdb','r')
+	w=destroy and open for writing
+	a=append to the file (add to end)
+	r=read file
+	
+	type(pdb_file)
+	=file
+	line= pdb_file.readline()
+	#can read individual lines of the file
+	line2= ...
+	#reads next line
+	#produces a list of strings (.readline())
+	for line in pdb_file: 
+	#what means line?
+	#there is a rule: \n
+	\n is the line feed character; that's the notation to indicate a line feed character. 
+	#python looks for either/or of these characters and understands it. 
+	
+	for line in pdb_file:
+		print line[:6]
+		if line[:6] == 'ATOM':
+			i+= 1
+how do I compute the distance from every oxygen atom to every hydrogen atom? 
+use a loop that visits every nitrogen atom in turn, and inside that loop, visit every oxygen atom and 
+then compute the distance between. if it does, compute, if not, go to next. 
+		
+		how do we find distance? Pythagorean theorem
+def distance(p0,p1):
+	''''compute euclidean distance bt points''''
+	return np.sqrt(np.sum((p0-p1)**2)
+	
+def editData(N):
+	for line in N:
+		if line [:6]=='ATOM'
+			append_list(N)
+			N.
+			
+			
+we've got points, and we need to figure out the points that are only within a certain amount of distance
+find pairs w/in one unit of distance.
+...and we need a for loop.
+for X in A:
+		
+#find pairs w/in one distance unit
+pairs = [] 
+#create pairs  variable
+#i=0
+
+for i,p in enumerate(points):
+#every time around, prints index and the tuple
+	##j=0
+    for j,q in enumerate(points[i+1:]):
+		##if j<= i:
+			##continue
+			#continue works as going on to the next time around the loop
+			
+		if distance(p,q) <= 1:
+			pairs.append((i,j+i+1))
+			pylab.plot((p[0],q[0]),(p[1],q[1]), 'r')
+		##j=j+1
+	##i=i+1
+#also, it is inefficient in that it finds the distance of 0,9 and 9,0
+#there is a shorthand! enumerate
+#enumerate on every time through the loop gives us 2 values instead of 1, gives us a counter in the sequence and
+#tells us which one we are on. 
+
+
+
+#lists love to be appended. really want to append index of the points, 
+#the two is a tuple, the second parenthesis binds them together as one returned.
+
+#also want a red line between the distances that are less than 1 between
+
+DICTIONARIES!
+D={}
+10 in D
+out-true
+
+17 in D?
+false
+
+for foo in D:
+    print D[foo]
+    #prints values of D
+    
+for foo in D:
+    print foo
+    #prints the index #s
+    
+for K,V in D.items():
+    print K,V
+    
+for K in sorted(D.keys()):
+    print K, D[K]
+
+D.keys()
+D.values()
+
+allows us to associate values with keys.
+can't slice a dictionary, but they go further than arrays. 
+called keys because more capable than just integers.
+D['Patrick']=100
+key can be integer, string, tuple, but it can't be a list (since lists are objects that can change)
+dictionaries don't allow change. D
+
+for i in range(3):
+    print 'yes'
+    for y in range(3,6):
+        print 'no'
+        
+                

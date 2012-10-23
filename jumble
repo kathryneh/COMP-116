@@ -1,0 +1,41 @@
+How to take a mixed up word and find all of the words that can be made from it
+S= 'computer'
+list(S) => returns list. 
+random.shuffle(L)
+S=''.join(L)
+fp=file('/usr/share/dict/words', 'r')
+for word in fp
+need to visit every word in this (loop!) 
+query = raw_input('enter your jumbled word:')
+L=list(query)
+fp=file('usr/share/dict/words', 'r')
+for word in fp:
+for i, word in enumerate(fp)
+    print repr(word) #repr will 
+    if i>5:
+        break
+
+for word in fp:
+    word=word.strip()
+    if len(word) == LN:
+        T-list(word)
+        T.sort()
+        if T==L:
+            print word
+    
+visiting every word in this list
+L.sort() #now in alphabetical order
+
+D={}
+for word in fp:
+    word=word.strip()
+    key=list(word)
+    sort(key)
+    key=''.join(key)
+    #can't use a list as a key to a dictionary
+    D[key] = word
+
+    pickle : store stuff 
+
+import cPickle as pickle
+pickle.dump(D, file('jumbledict.pkl', 'w')

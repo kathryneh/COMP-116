@@ -1,0 +1,51 @@
+import numpy as np
+import pylab
+from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.mlab as mlab
+import matplotlib.pyplot as plt
+
+correctTime = []
+incorrectTime = []
+for line in file('correcttime.txt', 'r'):
+    correctTime.append(float(line[0:9]))
+correct=np.array(correctTime)
+for line in file('incorrecttime.txt', 'r'):
+    incorrectTime.append(float(line[0:9]))
+incorrect=np.array(incorrectTime)
+    
+import matplotlib.pyplot as plt
+
+cMean=np.mean(correctTime)
+iMean=np.mean(incorrectTime)
+cSTD=np.std(correctTime)
+iSTD=np.std(incorrectTime)
+
+muC, sigmaC = cMean, cSTD
+muI, sigmaI = iMean, iSTD
+
+# the histogram of the data
+n1, bins1, patches1 = plt.hist(correctTime, 50, normed=1, facecolor='green', alpha=0.75)
+
+# add a 'best fit' line
+y = mlab.normpdf( bins1, muC, sigmaC)
+l = plt.plot(bins1, y, 'green', linewidth=2)
+
+plt.xlabel('Time (seconds)')
+plt.ylabel('Number of Occurrences')
+plt.title(r'$\mathrm{Histogram\ of\ IQ:}\ \mu=100,\ \sigma=15$')
+plt.grid(True)
+
+# the histogram of the data
+n2, bins2, patches2 = plt.hist(incorrectTime, 50, normed=1, facecolor='blue', alpha=0.75)
+
+# add a 'best fit' line
+y = mlab.normpdf( bins2, muI, sigmaI)
+l = plt.plot(bins2, y, 'blue', linewidth=2)
+
+
+plt.title(r'Histogram of Typing Data: Incorrect and Correctly Spelled words vs Time in seconds')
+plt.axis([0, 7, 0, 3])
+plt.grid(True)
+plt.legend( ('Correct', ('Incorrect') ))
+plt.show()
+        

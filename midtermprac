@@ -1,0 +1,40 @@
+import numpy as np
+A = np.array([[1,2,3],[4,5,6],[7,8,9]])
+D = { 1:0, 10:1, 100:2, 1000:3, 10000:4 }
+
+#  1
+sum = 0
+for x in A: # x is set to each row in A in turn
+    for y in x:
+        sum = sum + y
+print sum
+
+# 2
+for i,x in enumerate(A):
+    for j,y in enumerate(x):
+        if j>=i:
+            print i,j,y
+
+# 3
+for i in range(2):
+    if np.any(A[i] > A[i+1]):
+        print 'yes'
+print 'done'
+
+# 4
+m = A.mean()
+for x in A[A>m]:
+    print x
+
+# 5
+m = A.mean()
+for x in A:
+    for y in x:
+        if y > m:
+            print y
+
+# 6
+sum = 0
+for k in D:
+    sum = sum + D[k]
+print sum

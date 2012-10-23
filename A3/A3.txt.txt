@@ -1,0 +1,134 @@
+Assignment 3 due 18 September 2009
+
+Author: Kathryne Hawthorne
+
+# Grade: 95/100
+
+Collaborators: (if you worked with anyone else on this assignment put their names here).
+
+Setup: Startup ipython and import the numpy package as np using this line:
+
+import numpy as np
+
+Exercises:
+
+1. What does python print as the result of the last line in this
+sequence? (you may copy and paste the result)
+
+a = np.arange(5)
+b = np.arange(20,30,2)
+a+b
+
+In [1]: import numpy as np
+
+In [2]: a=np.arange(5)
+
+In [3]: b=np.arange(20,30,2)
+
+In [4]: a+b
+Out[4]: array([20, 23, 26, 29, 32])
+
+# 20/20
+-----
+
+Use numpy arrays and their methods (but no loops for those of you who
+know about them) to evaluate the following expressions. Show what you
+typed to ipython to get your answer along with your answer.
+
+
+2. What is the sum of the cubes of the odd integers between 17 and 42?
+(use arange to generate the array)
+
+In [5]: c= np.arange(17,42,2)
+
+In [6]: c
+Out[6]: array([17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41])
+
+In [7]: c**3
+Out[7]:
+array([ 4913,  6859,  9261, 12167, 15625, 19683, 24389, 29791, 35937,
+       42875, 50653, 59319, 68921])
+
+In [8]: d=c**3
+
+In [9]: np.sum(d)
+Out[9]: 380393
+
+# 20/20
+
+3. What is the sum of the squares of the integers between -40 and plus
+40 inclusive (that is including both ends of the range)?
+
+
+In [18]: e=np.arange(-40,41,1)
+
+In [19]: f=e**2
+
+In [20]: np.sum(f)
+Out[20]: 44280
+
+# 20/20
+
+-----
+
+For this next exercise you'll need to import the random module from
+numpy like this:
+
+import numpy.random as npr
+
+Now you can learn about the random_integers function from ipython
+using the great ? operator by typing:
+
+npr.random_integers?
+
+It should print something like this:
+
+    random_integers(low, high=None, size=None)
+    
+    Return random integers x such that low <= x <= high.
+    
+    If high is None, then 1 <= x <= low.
+
+So we could simulate 10000 rolls a six-sided die (singular of dice)
+like this:
+
+roll = npr.random_integers(1,6,10000)
+
+Given all that here is what I want you to do:
+
+4. Determine the probability of rolling 3 on the die. To do that
+you'll need to count the number of times the value of roll is equal to
+3 and divide by the number rolls (in this case 10000). Of course
+counting the number of 3's by hand is ridiculous. You need to devise a
+way to get the computer to do it for you. Again, NO LOOPS. (Hint:
+you'll find the equality comparison == useful here). Show your work
+and your answer.
+
+
+In [25]: roll=npr.random_integers(1,6,10000)
+
+In [26]: np.size(np.where(roll==3))
+Out[26]: 1615
+
+# 15/20  probability is a percentage.  You need to divide by the total number of rolls.
+
+-----
+
+5. Create a 4 by 4 array of zeros using the np.zeros function. Now set
+the central 2 by 2 region of the array to 1. Show your work. You
+should be able to do this in 2 lines (or even 1).
+
+In [22]: a=np.zeros((4,4))
+
+In [23]: a[1:3,1:3]=1
+
+In [24]: a
+Out[24]:
+array([[ 0.,  0.,  0.,  0.],
+       [ 0.,  1.,  1.,  0.],
+       [ 0.,  1.,  1.,  0.],
+       [ 0.,  0.,  0.,  0.]])
+
+
+# 20/20
+

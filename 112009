@@ -1,0 +1,28 @@
+#def rect(p0,p1,n):
+#    result=np.zeros((n,n), dtype=bool)
+#    result[p0[0]:p1[1], p0[0]:p1[0]]=true
+#    return result
+    
+#we want a function that takes a center (c) of the form x/y
+#circle(C, R, N)
+#x^2+y^2=R^2
+#numpy.meshgrid(x,y)
+#returns two things, a pair of matrices
+
+import numpy as np
+def circle( C, R, N):
+    result=np.zeros((N,N), dtype=bool)
+    X=np.arange(0,N)
+    Y=np.arange(0,N)
+    #X, Y = np.meshgrid(X1,Y1)
+    for i in X:
+        for j in Y:
+            if(((X[i]-C[0])**2+(Y[j]-C[1])**2)<=R**2):
+                result[X[i],Y[j]]=True
+    return result
+    
+triangle(p0,p1,p2,n)
+edge(p0,p1,n)
+Ax+By+C=0
+
+    

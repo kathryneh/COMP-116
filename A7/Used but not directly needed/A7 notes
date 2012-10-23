@@ -1,0 +1,107 @@
+#people will be slower at typing slightly misspelled common words than they
+#will be at typing correctly spelled words. 
+#trials include: 
+#data script and data analysis script should be separate scripts
+#don't write only one script and then get lots of graphs from it
+#should record data in file and then record data step by step, save it in
+#a different file as you go
+#must be in PDF format
+#function in python to time things
+import time 
+t=time.time()
+t=huge float point number--# of seconds vs. jan 1970
+t2=time.time()
+t2-t = gives time between the two times of when they were done 
+every time you call time, it gives a different number, pretty good resolution.
+#another useful function is time.sleep(1)
+goes away for that long and then comes back. 
+
+foo = raw_input('type this: abc')
+    then after this, foo = abc
+for prompt in [ 'hi', 'there', 'bozo']:
+    t1=time.time()
+    answer=raw_input(prompt + ' ')
+    print prompt, answer t2-t1
+    
+use random to randomly choose one from both arrays--one from 
+have to think about what if they get it wrong
+have to save the times in separate files
+randomly call up spelled and mispelled
+graph would be a histograph between spelling times and mispelling times
+add in standard deviation
+if the word is not called correctly, do not save the data. 
+#in the last file we used, talked about opening file it was mentioned, used a file constructor
+gave it the name as the file name, in the second argument was 
+
+ file(filename, 'r'):
+ r= read
+ a=append
+ w=write (and if it already exists, it goes away)
+ fp=file('foo.txt', 'w')#deletes it at the time it is called. 
+ print>>fp, 'hi', t2-t1
+ >> file object, makes it go to a file rather than to the command prompt
+ if you put a comma at the end (ie. print>>fp, 'foo', '23',) it doesn't go to a new line
+ 
+ import random 
+ random.shuffle(list name)
+ and it'll shuffle it.
+ 
+ %s expect a string here
+ %d expect a decimal number
+ %f is a floating point
+ %(a number here)s, makes the minimum length always take a certain amount of space in the array. 
+ line.split()
+ breaks the line by space by default. 
+ ['ab', '17.3']
+ 
+ call the term you printed and also make sure that they match, otherwise don't record.
+ 
+ prompt= 'abc'
+ response = 'a c'
+ time = .5
+ print '%s|%s|%f' (prompt, response, t)
+ then, I could split it using bar 
+ 
+ if ' ' in prompt:
+        print "don't type spaces please"
+        
+ 'abc,def'.split(',')
+ will split at commas
+ 
+ give mean, std dev, histogram, possibly 
+ 
+ raw_input('hit enter to continue')
+ won't continue until you hit enter. (only works for enter
+ 
+ when recording the data, record as much as possible
+ also, open your file as 'a'
+ 
+ import random
+ random.shuffle(L)
+ record as many settings as possible.
+ strip method of string will take off whatever you ask it to.
+ raw_input(s)
+ s.strip() without the new line and without the leading space.
+ 
+ November 11, 2009
+ range returns a list w/ values counting up
+ xrange when used in a for loop behaves like range but it doesn't create that list.
+    xrange creates an object that each time asked to create the next value
+ 
+ import numpy as np
+ def myst(n):
+    s=np.ones(n+1, dtype=np.bool)
+    
+    s[0]=False
+    s[1]=False
+    
+    for i in xrange(2, int(n**0.5)+1):#xrange and range for most purposes do the same thing
+    
+        if s[i]:
+            s[i*i:n+1:i] = False
+    return np.where(s)[0]
+    
+for e in range(10)
+    N=10**e
+    print N, len(myst(N)), int(N/np.log(N))
+    

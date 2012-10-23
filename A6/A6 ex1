@@ -1,0 +1,56 @@
+import numpy as np
+import pylab
+from mpl_toolkits.mplot3d import Axes3D
+
+def readPDBfile(filename):
+
+    '''read a PDB file, extract the ATOM lines, and return
+       atom number, atom name, residue number, and coords for each'''
+    # build them up in lists because they are cheap to append
+    #don't know how big the array would otherwise need to be; this just makes the size needed. 
+    anum = []
+    aname = []
+    resno = []
+    coords = []
+    # open the file and process each line
+    # your work goes here
+    for line in filename.readline():
+        if line [:6] == 'ATOM  ':
+            num=int(line[6:11])
+            anum.append(num)
+            name=line[12:16]
+            aname.append(name)
+            resn=int(line[22:26])
+            resno.append(resn)
+            coord=[float(line[30:38]),float(line[38:45]),float(line[46:54])]
+            coords.append(coord)
+    # convert the results to numpy arrays
+    anum = np.array(anum)
+    coords = np.array(coords)
+    resno = np.array(resno)
+
+    # return the 4 results
+    return (anum, aname, resno, coords)
+    #return the tuple with four things inside of it. 
+pdb_file=file('7HVP.pdb','r')
+aname, anum, resn, coords = readPDBfile(pdb_file)
+
+def drawCA(aname, coords):
+    i=0
+    '''plot the Calpha backbone of an atom'''
+    fig = pylab.figure()
+    
+    # your work goes here
+    for line in aname:
+        if aname =='CA  ':
+            fig=pylab.figure()
+            for x,y,z in coords[i]:
+                x=coords[:,0]
+                y=coords[:,1]
+                z=coords[:,2]
+                ax=Axes3D(fig)
+                ax.plot(x,y,z) # x, y, and z are 1D arrays giving the coordinates of the points
+                pylab.show()
+        return fig
+    i=i+1
+drawCA(aname,coords)

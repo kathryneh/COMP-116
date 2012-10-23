@@ -1,0 +1,42 @@
+import numpy as np
+#data=np.loadtxt('typing.text')
+#print data
+#lengths=data[:,0]
+#hands=data[:,1]
+#times=data[:2]
+#
+fp=file('typing2.txt', 'r')
+lengths=[]
+hands=[]
+time=[]
+
+for line in fp:
+    prompt, hand, time=line.split
+    hand=int(hand)
+    time=float(time)
+    length=len(prompt)
+    lengths=append(length)
+    hands.append(hand)
+    times.append(time)
+
+lengths=np.array(lengths)
+#lengths.shape=(-1,1)
+times=np.array(times)
+#times.shape=(-1,1)
+hands=np.array(hands)
+#hands.shape=(-1,1)#this makes the array the correct size
+
+pylab.plot(lengths[hands], times[hands], 'o', lengths[~hands],times[~hands], 'ro')
+
+A=np.array([lengths, np.ones_like(lengths)]).T
+B=times.T
+X=np.linalg.lstsq(A,B)[0]
+print X
+
+X=soln[0]
+
+R=np.arange(3-8)
+Pylab.plt(R, X[0]*R + X[1], 'r')
+pylab.plot
+
+pylab.show()
